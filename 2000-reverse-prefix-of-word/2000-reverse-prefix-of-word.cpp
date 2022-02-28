@@ -12,12 +12,7 @@ public:
         if(index==0)
             return word;
         
-        for(int j=0;j<=index/2;j++)
-        {
-            int temp=word[j];
-            word[j]=word[index-j];
-            word[index-j]=temp;
-        }
+         reverse(word.begin(),word.begin()+index+1 );
         return word;
     }
 };
