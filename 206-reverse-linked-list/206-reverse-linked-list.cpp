@@ -9,22 +9,20 @@
  * };
  */
 class Solution {
-    //recursive 1
+    //recursive 2
     
 public:
-    void rec(ListNode* &head, ListNode* c,ListNode* p){
-        if(c==NULL){
-            head=p;
-            return ;
+    ListNode* rec(ListNode* head){
+        if(head==NULL || head->next==NULL){
+            return head;
         }
-        ListNode* f=c->next;
-        rec(head,f,c);
-        c->next=p;
+        ListNode* ans=rec(head->next);
+        head->next->next=head;
+        head->next=NULL;
+        return ans;
     }
     ListNode* reverseList(ListNode* head) {
-        ListNode* c=head;
-        ListNode* p=NULL;
-        rec(head,c,p);
-        return head;
+        
+        return rec(head);
     }
 };
