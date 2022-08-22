@@ -14,15 +14,15 @@ public:
         while(fast and fast->next){
             slow=slow->next;
             fast=fast->next->next;
-            if(slow==fast){
+            if(slow==fast){//intersection
                 slow=head;
             
-            while(slow!=fast){
+            while(slow!=fast){//starting node of loop
                 slow=slow->next;
                 fast=fast->next;
             }
       
-                return slow;
+                return fast;//slow=fast
             }
         }return NULL;
     }
