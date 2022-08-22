@@ -16,7 +16,7 @@ public:
         if(!head || !head->next)
             return head;
         while(p and p->next){
-            if(p->next && p->val==p->next->val){
+            if(p->val==p->next->val){
                 while(p->next && p->val==p->next->val){
                     p=p->next;
                 }
