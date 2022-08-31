@@ -12,7 +12,7 @@
 class Solution {
      void solve(TreeNode *root, int level, vector<int> &v){
         
-        //preorder ka reverse hai i.e. root left right=> right left root
+        //preorder ka reverse hai i.e. root left right=> root right left
         if(root==NULL) return;
         if(level==v.size()){
             v.push_back(root->val);
